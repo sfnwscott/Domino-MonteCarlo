@@ -37,4 +37,15 @@ Finally, I looked at how many of the points scored by the winner of a round were
 
 ### Conclusion
 
-The primary purpose of the project was to better
+The primary purpose of the project was to challenge myself in simulating a game I enjoy playing with my family. No use of Artificial Intelligence was had, primarily because it was intended to sharpen my skills further and think critically on the details. AI is an incredibly valuable tool for productivity that I utilize when writing bulk code that's easily checkable, but I find it encouraging to return to manual problem-solving when applicable.
+
+team's leftover tiles were awarded as points to the winning team. We see that for the dominant min-count, more points were scored at the end on average compared to other matchups, indicating a more passive approach may provide better outcomes in the long run. 
+
+<img src="result_plots/points_eog.png" alt="Points Scored End of Game" width=650>
+
+
+### Conclusion
+
+The primary purpose of the project was to challenge myself in simulating a game I enjoy playing with my family. No use of Artificial Intelligence was had, primarily because it was intended to sharpen my skills further and think critically on the details. AI is an incredibly valuable tool for productivity that I utilize when writing bulk code that's easily checkable, but I find it encouraging to return to manual problem-solving when applicable.
+
+The Monte Carlo strategy by strategy approach was interesting, but certainly didn't represent the playstyle of most players in reality who play by more heuristic means. The most successful Domino players pay attention to not only what they have, but also what others have already play and would likely play, counting high and low tiles as someone would in Blackjack. Therefore, the largely chance based conclusions of this project do not apply to competetive playstyles, although I intend to learn from what I've gathered at the small scale. 
