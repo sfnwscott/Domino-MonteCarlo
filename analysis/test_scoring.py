@@ -14,9 +14,10 @@ fig, axs = plt.subplots(
 )
 colors = ['tab:blue','tab:red','tab:green']
 filenames = ['results_all_min.csv', 'results_all_minoptions.csv', 'results_all_max.csv']
-labels = ['Minimize Board Total', 'Minimize Board Options', 'Maximize Tile Sum',]
+labels = ['Minimize Board Total', 'Minimize Board Options', 'Maximize Tile Sum']
+path = 'results/'
 for i in range(3):
-    df = pd.read_csv(filenames[i])#,index_col='Unnamed: 0')
+    df = pd.read_csv(path + filenames[i])#,index_col='Unnamed: 0')
     df['point sum'] = df[['player1 pts','player2 pts', 'player3 pts', 'player4 pts']].sum(axis=1)
     df['mean round score'] = df[['player1 pts','player2 pts', 'player3 pts', 'player4 pts']].mean(axis=1)
     grouped_rounds = df.groupby('round num')

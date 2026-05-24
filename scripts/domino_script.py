@@ -42,13 +42,13 @@ class Player:
             else:
                 move_index = random.choice(list(range(len(hand_moves))))
             return move_index
-
+        
         match strat:
             case 'min-count':
                 argmin_move = min(range(len(noscore_counts)), key=lambda x: noscore_counts[x])
                 move_index = noscore_indices[argmin_move]
             case 'min-options':
-                argmin_move = max(range(len(noscore_setlengths)), key=lambda x: noscore_setlengths[x])
+                argmin_move = min(range(len(noscore_setlengths)), key=lambda x: noscore_setlengths[x])
                 move_index = noscore_indices[argmin_move]
             case 'max-tile':
                 argmax_move = max(range(len(hand_moves)), key=lambda x: sum(hand_moves[x]))
@@ -64,18 +64,7 @@ class Player:
                 move_index = random.choice(noscore_indices)
             
         return move_index
-        # based on removing biggest tiles
-        # argmax_move = max(range(len(hand_moves)), key=lambda x: sum(hand_moves[x]))
-        # move_index = argmax_move  
-    
-        # based on minimizing board count
-            # argmin_move = min(range(len(noscore_counts)), key=lambda x: noscore_counts[x])
-            # move_index = noscore_indices[argmin_move]
-        # based on minimizing unique options for next player
-            
-            # argmax_move = max(range(len(hand_moves)), key=lambda x: sum(hand_moves[x]))
-            # move_index = argmax_move  
-   # return move_index
+
 
     def play_first(self, strat_combo):
         scoring_inds = []
@@ -296,27 +285,8 @@ class Player:
             else:
                 out_tiles.append(move_tile[0])
             if not second_move:
-                try:
-                    pair_lookup[board_index] = False
-                    pair_lookup[board_index + 1] = False
-                except:
-                    print('h')
-                    # print('')
-                    # print(game_num)
-                    # print(round_num)
-                    # print(num_turns)
-                    # print(num_turns)
-                    # print(self.hand)
-                    # print(boneyard)
-                    # print(out_tiles)
-                    # print(move_tile)
-                    # print(move_index)
-                    # print(board_index)
-                    # print(scoring_lookup)
-                    # print(pair_lookup)
-                    # print(board_index)
-                    # print(board_indices)
-                    
+                pair_lookup[board_index] = False
+                pair_lookup[board_index + 1] = False
                 scoring_lookup[board_index] = False
                 scoring_lookup[board_index + 1] = False
                 pair_lookup.append(False)
@@ -484,7 +454,7 @@ def play_game(game_seed, game_num, results, strat_combo):
         p = True
     else:
         p = False
-    #p = False
+    p = False
     while not game_won:
         random.seed(seed)
         dominos = domino_set.copy()
@@ -538,8 +508,8 @@ if __name__ == '__main__':
         df = pd.DataFrame(results)
         df_all = pd.concat([df_all, df])
     #print(df)
-    #df.to_csv('results_dynamic_oddminmax_evenminoptions.csv',index=False)
-    #df_all.to_csv('results_all_combos.csv',index=False)
+    #df.to_csv('../results/results_dynamic_oddminmax_evenminoptions.csv',index=False)
+    df_all.to_csv('results/results_all_combos.csv',index=False)
 
 
   
