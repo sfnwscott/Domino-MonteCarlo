@@ -17,13 +17,13 @@ The strategies tested occur when a player cannot score using the dominoes in the
 
 I began by looking at how points were scored differently depending on different strategies. Games consist of as many rounds as it takes for the first team to reach a certain amount of points, in my case I chose 100 somewhat arbitrarily since I couldn't remember the exact value. The figure below shows the number of points scored per player per round on the top and where games usually end on the bottom. Unsurprisingly, the strategy of minimizing the total on the board results in fewer points scored and longer games on average.
 
-<img src="result_plots/strat_comp.png" alt="Points and Game Lengths" width=650>
+<img src="result_plots/strat_comp.png" alt="Points and Game Lengths" width=750>
 
 Different strategies were compared in competition in matchups between Team 1 (players 1 and 3) and Team 2 (players 2 and 4) where each team tried a different tactic. The following plots show some of these matchups and the percent of games one by each team over the 500. The results were rather surprising, indicating that minimizing the board total consistently outcompeted the other choices. My assumption going in was that the dynamic strategy would clearly be the most optimal, but these results point to the contrary. I hypothesize that against **Maximize Tile Sum**, **Minimize Board Total** minimized the next player's possible points while larger point opportunities were given to their own team. Against **Minimize Board Options**, I imagine it extends the game longer while also providing high scoring opportunities during the game for the teammate.
 
 <div style="display: flex; gap: 10px;">
-    <img src="result_plots/team_comp.png" alt="Team Matchups First" style="width: 50%; height: auto">
-    <img src="result_plots/team_comp_dynamic.png" alt="Team Matchups Dynamic" style="width: 50%; height: auto">
+    <img src="result_plots/team_comp.png" alt="Team Matchups First" style="width: 75%; height: auto">
+    <img src="result_plots/team_comp_dynamic.png" alt="Team Matchups Dynamic" style="width: 75%; height: auto">
 </div>
 
 In testing every matchup individually, I found that the majority of strategies fare relatively even with one another. The heatmap depicts the win % for Team 1. It further emphasizes that minimizing the count on the board to minimize the number of points being scored during the round helps immensely. 
@@ -34,18 +34,8 @@ Finally, I looked at how many of the points scored by the winner of a round were
 
 <img src="result_plots/points_eog.png" alt="Points Scored End of Game" width=650>
 
-
 ### Conclusion
 
 The primary purpose of the project was to challenge myself in simulating a game I enjoy playing with my family. No use of Artificial Intelligence was had, primarily because it was intended to sharpen my skills further and think critically on the details. AI is an incredibly valuable tool for productivity that I utilize when writing bulk code that's easily checkable, but I find it encouraging to return to manual problem-solving when applicable.
 
-team's leftover tiles were awarded as points to the winning team. We see that for the dominant min-count, more points were scored at the end on average compared to other matchups, indicating a more passive approach may provide better outcomes in the long run. 
-
-<img src="result_plots/points_eog.png" alt="Points Scored End of Game" width=650>
-
-
-### Conclusion
-
-The primary purpose of the project was to challenge myself in simulating a game I enjoy playing with my family. No use of Artificial Intelligence was had, primarily because it was intended to sharpen my skills further and think critically on the details. AI is an incredibly valuable tool for productivity that I utilize when writing bulk code that's easily checkable, but I find it encouraging to return to manual problem-solving when applicable.
-
-The Monte Carlo strategy by strategy approach was interesting, but certainly didn't represent the playstyle of most players in reality who play by more heuristic means. The most successful Domino players pay attention to not only what they have, but also what others have already play and would likely play, counting high and low tiles as someone would in Blackjack. Therefore, the largely chance based conclusions of this project do not apply to competetive playstyles, although I intend to learn from what I've gathered at the small scale. 
+The Monte Carlo strategy-by-strategy approach was interesting, but certainly didn't represent the playstyle of most players in reality who play by more heuristic means. The most successful Domino players pay attention to not only what they have, but also what others have already play and would likely play, counting high and low tiles as someone would in Blackjack. Therefore, the largely chance based conclusions of this project do not apply to competetive playstyles, although I intend to learn from what I've gathered at the small scale. 

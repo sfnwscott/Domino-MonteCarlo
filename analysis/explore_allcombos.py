@@ -15,4 +15,3 @@ pct_oddwin = frac_oddwin * 100
 frac_evenwin = 1 - frac_oddwin
 pct_evenwin = frac_evenwin * 100
 #ct = pd.crosstab(df['team-1 strategy'],df['team-2 strategy'],values=)
-print(lastrounds[])
